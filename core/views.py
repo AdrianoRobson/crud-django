@@ -33,4 +33,10 @@ class CreateProdutoView(CreateView):
     success_url = reverse_lazy('index')
 
 
+class UpdateProdutoView(UpdateView):
 
+    model = Produto
+
+    template_name = 'produto_form.html'
+    fields = ['nome', 'preco']
+    success_url = reverse_lazy('index')
