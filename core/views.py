@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -7,7 +8,7 @@ from .forms import ProdutoModelForm
 
 
 class IndexView(ListView):
-    models = Produto
+    model = Produto
 
     # Template
     template_name = 'index.html'
@@ -17,4 +18,19 @@ class IndexView(ListView):
 
     # Recuperar dados do template
     context_object_name = 'produtos'
+
+
+class CreateProdutoView(CreateView):
+
+    # Ao usar class based view o formulário é criado automaticamente baseado no nosso model
+    model = Produto
+
+    template_name = 'produto_form.html'
+    fields = ['nome', 'preco']
+
+    # reverse_lazy -> Verifica qual é a view da nossa rota em urls.py e direciona pra ela
+    # success_url -> Após preencher o formulário com sucesso, vc será redirecionado pelo reverse_lazy
+    success_url = reverse_lazy('index')
+
+
 
