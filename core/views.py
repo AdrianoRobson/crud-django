@@ -40,3 +40,13 @@ class UpdateProdutoView(UpdateView):
     template_name = 'produto_form.html'
     fields = ['nome', 'preco']
     success_url = reverse_lazy('index')
+
+
+class DeletaProdutoView(DeleteView):
+
+    model = Produto
+
+    # Template para confirmar a exclusão do produto
+    template_name = 'produto_del.html'
+
+    success_url = reverse_lazy('index')
