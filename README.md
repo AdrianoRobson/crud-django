@@ -14,7 +14,8 @@ Esse projeto tem o objetivo de mostrar a estrutrua de um código de forma simple
 
  
 
-Seu nome - [@AdrianoRobson](https:Adriano08andrade@hotmail.com)
+[@AdrianoRobson](https://www.linkedin.com/in/adriano-robson/)
+
 
 [https://github.com/AdrianoRobson/crud-django](https://github.com/AdrianoRobson/crud-django)
 
